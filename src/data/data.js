@@ -1,10 +1,15 @@
+import memariImage from "../assets/memari.webp";
+import mabani from "../assets/mabani.webp";
+import mafahim from "../assets/mafahim.webp";
+import hosh from "../assets/hosh.jpg";
+
 let books=[
     {
         name:"معماری کامپیوتر",
         price:370000,
         author:"دکتر قدرت سپیدنام",
         description:"کتاب ارشد مجموعه مهندسی",
-        img:"",
+        img:memariImage,
         id:"01"
     },
     
@@ -13,7 +18,7 @@ let books=[
         price:310000,
         author:"دکتر حسین مهاجری ",
         description:"نشر علوم رایانه",
-        img:"",
+        img:hosh,
         id:"03"
     },
     {
@@ -21,7 +26,7 @@ let books=[
         price:150000,
         author:"دکتر سعید احسانی",
         description:"دانشگاه خواجه نصیرالدین طوسی",
-        img:"",
+        img:mafahim,
         id:"04"
     },
     {
@@ -29,7 +34,7 @@ let books=[
         price:125000,
         author:"دکتر ناصر نعمت بخش ",
         description:"نشر علوم رایانه",
-        img:"",
+        img:mabani,
         id:"05"
     },
 ];

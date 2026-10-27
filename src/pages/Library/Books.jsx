@@ -1,8 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { getbooks } from "../../data/data";
 
 const Books = () => {
   const books = getbooks();
+
+  const [searchParams] = useSearchParams();
+  const bookfilter = searchParams.get("text") || "";
+
+  const filteredBooks = books.filter((book) =>
+    book.name.startsWith(bookfilter.toLowerCase())
+  );
 
   return (
     <div className="container py-5" dir="rtl">
@@ -13,12 +20,12 @@ const Books = () => {
           <p className="text-secondary mb-0">کتاب مورد علاقه‌ات را پیدا کن</p>
         </div>
 
-        <span className="badge text-bg-primary fs-6">{books.length} کتاب</span>
+        <span className="badge text-bg-primary fs-6">{filteredBooks.length} کتاب</span>
       </div>
 
       {/* کارت‌های کتاب */}
       <div className="row g-4">
-        {books.map((book) => (
+        {filteredBooks.map((book) => (
           <div className="col-12 col-sm-6 col-lg-3" key={book.id}>
             <div className="card book-card h-100 border-0 shadow-sm">
               {/* تصویر کتاب */}
@@ -38,7 +45,7 @@ const Books = () => {
 
                 <h5 className="card-title fw-bold mb-3">{book.name}</h5>
                 <p className="text-secondary small mb-2">نویسنده: {book.author}</p>
-                
+
                 <div className="mt-auto">
                   <div className="book-price mb-3">{book.price.toLocaleString("fa-IR")} تومان</div>
                   <Link to={`/books/${book.id}`} className="btn btn-outline-primary w-100">مشاهده کتاب</Link>

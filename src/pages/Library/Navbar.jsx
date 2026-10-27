@@ -1,6 +1,11 @@
-import { Link, Outlet, NavLink } from "react-router-dom"
+import { Link, Outlet, NavLink, useSearchParams } from "react-router-dom"
+import { getbooks } from "../../data/data";
 
 const Navbar = () => {
+  const books = getbooks();
+
+  let [searchParams, setSearchParams] = useSearchParams()
+
   return (
     <>
       <nav className="navbar bg-white shadow-sm py-3">
@@ -52,7 +57,18 @@ const Navbar = () => {
                 type="text"
                 className="form-control rounded-start"
                 placeholder="جستجو در کتاب‌ها..."
+                value={searchParams.get("text") || ""}
+                onChange={(event) => {
+                  let filter = event.target.value
+                  if (filter) {
+                    setSearchParams({ text: filter })
+                  } else {
+                    setSearchParams({})
+                  }
+                }
+                }
               />
+
               <span className="input-group-text bg-white">🔍</span>
             </div>
 

@@ -10,7 +10,7 @@ import Home from "./pages/Library/Home.jsx"
 import About from "./pages/Library/About.jsx"
 import Books from "./pages/Library/Books.jsx"
 import Book from './pages/Library/Book.jsx';
-import NotFound from "./pages/Library/Notfound.jsx";
+import Notfound from "./pages/Library/Notfound.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,7 +22,7 @@ createRoot(document.getElementById('root')).render(
           <Route path='/books' element={<Books />} />
           <Route path='/books/:bookId' element={<Book />}/>
         </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<Notfound />} />
 
       </Routes>
 

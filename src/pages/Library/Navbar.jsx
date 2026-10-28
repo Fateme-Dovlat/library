@@ -8,7 +8,7 @@ const Navbar = () => {
   const navigate = useNavigate()
 
   const filteredBooks = books.filter((book) =>
-    book.name.includes(query.trim())
+    book.name.startsWith(query.trim())
   )
 
   return (

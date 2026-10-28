@@ -2,7 +2,7 @@ import { DevTool } from "@hookform/devtools";
 import { useForm } from "react-hook-form";
 
 const Register = () => {
-  const { control, handleSubmit, register, formState: { errors } } = useForm();
+  const { control, handleSubmit, register, formState: { errors }, watch } = useForm();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -29,8 +29,19 @@ const Register = () => {
                 className="form-control"
                 id="name"
                 placeholder="نام خود را وارد کنید"
-                {...register("name")}
+                {...register("name", {
+                  required: "لطفاً نام خود را وارد کنید",
+                  minLength: {
+                    value: 3,
+                    message: "نام باید حداقل ۳ کاراکتر باشد",
+                  },
+                  validate: (value) =>
+                    value.trim().length >= 3 || "نام معتبر وارد کنید",
+                })}
               />
+              <div className="text-danger small mt-1">
+                {errors?.name?.message}
+              </div>
             </div>
 
             <div className="mb-3">
@@ -42,8 +53,19 @@ const Register = () => {
                 className="form-control"
                 id="email"
                 placeholder="example@email.com"
-                {...register("email")}
+                {...register("email", {
+                  pattern: {
+                    value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/,
+                    message: "ایمیل را درست وارد کن"
+                  },
+                  required: 'لطفا ایمیل را وارد کنید'
+                })}
               />
+
+              <div className="text-danger small mt-1">
+                {errors?.email?.message}
+              </div>
+
             </div>
 
             <div className="mb-3">
@@ -56,14 +78,22 @@ const Register = () => {
                 id="password"
                 placeholder="رمز عبور خود را وارد کنید"
                 {...register("password", {
-                  required: 'لطفا پسوورد را وارد کنید'
+                  required: "لطفاً رمز عبور را وارد کنید",
+                  minLength: {
+                    value: 8,
+                    message: "رمز عبور باید حداقل ۸ کاراکتر باشد",
+                  },
+                  pattern: {
+                    value: /^(?=.*[a-zA-Z])(?=.*\d).+$/,
+                    message: "رمز عبور باید حداقل یک حرف انگلیسی و یک عدد داشته باشد",
+                  },
                 })}
               />
               {errors.password && (
                 <div className="text-danger small mt-1">
                   {errors.password.message}
                 </div>
-                )}
+              )}
             </div>
 
             <div className="mb-4">
@@ -75,8 +105,15 @@ const Register = () => {
                 className="form-control"
                 id="confirmPassword"
                 placeholder="رمز عبور را دوباره وارد کنید"
-                {...register("confirmPassword")}
+                {...register("confirmPassword", {
+                  required: "لطفاً رمز عبور را تکرار کنید",
+                  validate: (value) =>
+                    value === watch("password") || "رمزهای عبور یکسان نیستند",
+                })}
               />
+              <div className="text-danger small mt-1">
+                {errors?.confirmPassword?.message}
+              </div>
             </div>
 
             <button type="submit" className="btn btn-primary w-100">

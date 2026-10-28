@@ -1,7 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import { getbook } from "../../data/data";
+import { useTranslation } from "react-i18next";
 
 const Book = () => {
+  const { t } = useTranslation();
   const { bookId } = useParams();
   const book = getbook(bookId);
 

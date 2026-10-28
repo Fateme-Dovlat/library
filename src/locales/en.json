@@ -1,0 +1,105 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "books": "Books",
+    "contact": "Contact Us",
+    "cart": "Shopping Cart",
+    "register": "Register",
+    "login": "Login",
+    "searchPlaceholder": "Search books...",
+    "searchButton": "Search",
+    "noBooksFound": "No books found."
+  },
+  "home": {
+    "welcome": "Welcome to Our Bookstore",
+    "subtitle": "Discover your next favorite book.",
+    "browseBooks": "Browse Books",
+    "featuredBooks": "Featured Books",
+    "whyUs": "Why Choose Us?",
+    "quality": "High-Quality Books",
+    "qualityDescription": "Discover books from various genres and authors.",
+    "easyShopping": "Easy Shopping",
+    "easyShoppingDescription": "Find and buy your favorite books with ease.",
+    "fastDelivery": "Fast Delivery",
+    "fastDeliveryDescription": "Get your favorite books delivered to your door."
+  },
+  "books": {
+    "title": "Our Books",
+    "description": "Explore our collection of books.",
+    "price": "Price",
+    "author": "Author",
+    "details": "View Details",
+    "buy": "Buy Now",
+    "addToCart": "Add to Cart",
+    "notFound": "Book not found.",
+    "noResults": "No books match your search.",
+    "backToBooks": "Back to Books"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "We believe that every book opens a new world. Our bookstore helps you discover stories, knowledge, and inspiration."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Full Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message",
+    "success": "Your message has been sent successfully."
+  },
+  "register": {
+    "title": "Create an Account",
+    "subtitle": "Create an account to buy books.",
+    "name": "Full Name",
+    "namePlaceholder": "Enter your full name",
+    "email": "Email",
+    "emailPlaceholder": "example@email.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Enter your password again",
+    "submit": "Register",
+    "alreadyRegistered": "Already have an account?",
+    "login": "Log In",
+    "nameRequired": "Please enter your name.",
+    "nameMinLength": "Your name must contain at least 3 characters.",
+    "emailRequired": "Please enter your email address.",
+    "emailInvalid": "Please enter a valid email address.",
+    "passwordRequired": "Please enter a password.",
+    "passwordMinLength": "Your password must contain at least 8 characters.",
+    "passwordPattern": "Your password must contain at least one English letter and one number.",
+    "confirmPasswordRequired": "Please confirm your password.",
+    "passwordMismatch": "Passwords do not match."
+  },
+  "login": {
+    "title": "Welcome Back",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Log In",
+    "noAccount": "Don't have an account?",
+    "register": "Register"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty.",
+    "continueShopping": "Continue Shopping",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "loginRequired": "Please log in before purchasing."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong.",
+    "success": "Success!",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close",
+    "back": "Back",
+    "notFound": "Page not found",
+    "backHome": "Back to Home"
+  }
+}

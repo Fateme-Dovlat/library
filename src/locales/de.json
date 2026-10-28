@@ -1,0 +1,105 @@
+{
+  "navbar": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "books": "Bücher",
+    "contact": "Kontakt",
+    "cart": "Warenkorb",
+    "register": "Registrieren",
+    "login": "Anmelden",
+    "searchPlaceholder": "Bücher suchen...",
+    "searchButton": "Suchen",
+    "noBooksFound": "Keine Bücher gefunden."
+  },
+  "home": {
+    "welcome": "Willkommen in unserer Buchhandlung",
+    "subtitle": "Entdecken Sie Ihr nächstes Lieblingsbuch.",
+    "browseBooks": "Bücher entdecken",
+    "featuredBooks": "Ausgewählte Bücher",
+    "whyUs": "Warum sollten Sie uns wählen?",
+    "quality": "Hochwertige Bücher",
+    "qualityDescription": "Entdecken Sie Bücher verschiedener Genres und Autoren.",
+    "easyShopping": "Einfaches Einkaufen",
+    "easyShoppingDescription": "Finden und kaufen Sie Ihre Lieblingsbücher ganz einfach.",
+    "fastDelivery": "Schnelle Lieferung",
+    "fastDeliveryDescription": "Lassen Sie sich Ihre Lieblingsbücher nach Hause liefern."
+  },
+  "books": {
+    "title": "Unsere Bücher",
+    "description": "Entdecken Sie unsere Büchersammlung.",
+    "price": "Preis",
+    "author": "Autor",
+    "details": "Details ansehen",
+    "buy": "Jetzt kaufen",
+    "addToCart": "In den Warenkorb",
+    "notFound": "Buch nicht gefunden.",
+    "noResults": "Keine Bücher entsprechen Ihrer Suche.",
+    "backToBooks": "Zurück zu den Büchern"
+  },
+  "about": {
+    "title": "Über uns",
+    "description": "Wir glauben, dass jedes Buch eine neue Welt eröffnet. Unsere Buchhandlung hilft Ihnen dabei, Geschichten, Wissen und Inspiration zu entdecken."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "name": "Vor- und Nachname",
+    "email": "E-Mail-Adresse",
+    "subject": "Betreff",
+    "message": "Ihre Nachricht",
+    "send": "Nachricht senden",
+    "success": "Ihre Nachricht wurde erfolgreich gesendet."
+  },
+  "register": {
+    "title": "Konto erstellen",
+    "subtitle": "Erstellen Sie ein Konto, um Bücher zu kaufen.",
+    "name": "Vor- und Nachname",
+    "namePlaceholder": "Geben Sie Ihren vollständigen Namen ein",
+    "email": "E-Mail",
+    "emailPlaceholder": "example@email.com",
+    "password": "Passwort",
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "confirmPassword": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Geben Sie Ihr Passwort erneut ein",
+    "submit": "Registrieren",
+    "alreadyRegistered": "Sie haben bereits ein Konto?",
+    "login": "Anmelden",
+    "nameRequired": "Bitte geben Sie Ihren Namen ein.",
+    "nameMinLength": "Der Name muss mindestens 3 Zeichen enthalten.",
+    "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+    "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "passwordRequired": "Bitte geben Sie ein Passwort ein.",
+    "passwordMinLength": "Das Passwort muss mindestens 8 Zeichen enthalten.",
+    "passwordPattern": "Das Passwort muss mindestens einen englischen Buchstaben und eine Zahl enthalten.",
+    "confirmPasswordRequired": "Bitte bestätigen Sie Ihr Passwort.",
+    "passwordMismatch": "Die Passwörter stimmen nicht überein."
+  },
+  "login": {
+    "title": "Willkommen zurück",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "submit": "Anmelden",
+    "noAccount": "Sie haben noch kein Konto?",
+    "register": "Registrieren"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer.",
+    "continueShopping": "Weiter einkaufen",
+    "remove": "Entfernen",
+    "quantity": "Menge",
+    "total": "Gesamtbetrag",
+    "checkout": "Weiter zur Kasse",
+    "loginRequired": "Bitte melden Sie sich vor dem Kauf an."
+  },
+  "common": {
+    "loading": "Wird geladen...",
+    "error": "Es ist ein Fehler aufgetreten.",
+    "success": "Erfolgreich!",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "close": "Schließen",
+    "back": "Zurück",
+    "notFound": "Seite nicht gefunden",
+    "backHome": "Zurück zur Startseite"
+  }
+}

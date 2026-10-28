@@ -1,18 +1,16 @@
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
-  
+  const { t } = useTranslation();
   return (
     <div dir="rtl">
       <section className="home-hero">
         <div className="container">
           <div className="row align-items-center g-4">
             <div className="col-md-6">
-              <span className="hero-label">به دنیای کتاب خوش آمدید</span>
-              <h1 className="fw-bold mt-3">
-                کتاب مورد علاقه‌ات را پیدا کن
-              </h1>
+              <span className="hero-label">{t("home.welcome")}</span>
+              <h1 className="fw-bold mt-3">{t("home.subtitle")}</h1>
               <p className="text-secondary my-4">
                 مجموعه‌ای از کتاب‌های آموزشی و تخصصی
                 برای یادگیری و پیشرفت شما.

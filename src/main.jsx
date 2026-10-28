@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css'
+import "./i18n"
 
 import { StrictMode } from 'react'
 import { BrowserRouter, Routes, Route,Navigate } from 'react-router-dom';

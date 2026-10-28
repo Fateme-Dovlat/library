@@ -1,7 +1,9 @@
 import { DevTool } from "@hookform/devtools";
 import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
+  const { t } = useTranslation();
   const { control, handleSubmit, register, formState: { errors }, watch } = useForm();
 
   const onSubmit = (data) => {
@@ -72,23 +74,7 @@ const Register = () => {
               <label htmlFor="password" className="form-label">
                 رمز عبور
               </label>
-              <input
-                type="password"
-                className="form-control"
-                id="password"
-                placeholder="رمز عبور خود را وارد کنید"
-                {...register("password", {
-                  required: "لطفاً رمز عبور را وارد کنید",
-                  minLength: {
-                    value: 8,
-                    message: "رمز عبور باید حداقل ۸ کاراکتر باشد",
-                  },
-                  pattern: {
-                    value: /^(?=.*[a-zA-Z])(?=.*\d).+$/,
-                    message: "رمز عبور باید حداقل یک حرف انگلیسی و یک عدد داشته باشد",
-                  },
-                })}
-              />
+              const {t} = useTranslation();
               {errors.password && (
                 <div className="text-danger small mt-1">
                   {errors.password.message}
@@ -98,7 +84,7 @@ const Register = () => {
 
             <div className="mb-4">
               <label htmlFor="confirmPassword" className="form-label">
-                تکرار رمز عبور
+                {t("register.confirmPassword")}
               </label>
               <input
                 type="password"

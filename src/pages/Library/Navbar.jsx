@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link, Outlet, NavLink, Navigate, useNavigate } from "react-router-dom"
 import { getbooks } from "../../data/data";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const books = getbooks();
   const [query, setQuery] = useState("")
   const navigate = useNavigate()
@@ -33,7 +35,7 @@ const Navbar = () => {
               to="/home"
               className="text-primary fw-bold text-decoration-none border-bottom border-primary border-2 py-2"
             >
-              خانه
+              {t("navbar.home")}
             </Link>
 
             <NavLink
@@ -42,7 +44,7 @@ const Navbar = () => {
                 `nav-link ${isActive ? "text-primary fw-bold" : "text-dark"}`
               }
             >
-              کتاب‌ها
+             {t("navbar.books")}
             </NavLink>
 
             <NavLink
@@ -51,9 +53,20 @@ const Navbar = () => {
                 `nav-link ${isActive ? "text-primary fw-bold" : "text-dark"}`
               }
             >
-              درباره ما
+             {t("navbar.about")}
             </NavLink>
           </div>
+
+          <select
+            className="form-select"
+            style={{ width: "130px" }}
+            value={i18n.language}
+            onChange={(e) => i18n.changeLanguage(e.target.value)}
+          >
+            <option value="fa">فارسی</option>
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+          </select>
 
           {/* جست‌وجو و سبد خرید */}
           <div className="d-flex align-items-center gap-4">

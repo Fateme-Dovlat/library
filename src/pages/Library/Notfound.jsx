@@ -1,7 +1,8 @@
-
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const NotFound = () => {
+  const { t } = useTranslation();
   return (
     <main className="container not-found" dir="rtl">
       <div className="error-number">404</div>

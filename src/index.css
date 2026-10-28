@@ -15,7 +15,7 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
-  font: 18px/145% var(--sans);
+  font: 16px/130% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
@@ -67,12 +67,12 @@ body {
 h1,
 h2 {
   font-family: var(--heading);
-  font-weight: 500;
+  font-weight: 400;
   color: var(--text-h);
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 40px;
   letter-spacing: -1.68px;
   margin: 32px 0;
 
@@ -391,4 +391,7 @@ body {
     min-height: 260px;
     height: 260px;
   }
+}
+html {
+  zoom: 85%;
 }

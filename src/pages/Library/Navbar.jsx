@@ -1,10 +1,15 @@
-import { Link, Outlet, NavLink, useSearchParams } from "react-router-dom"
+import { useState } from "react";
+import { Link, Outlet, NavLink, Navigate, useNavigate } from "react-router-dom"
 import { getbooks } from "../../data/data";
 
 const Navbar = () => {
   const books = getbooks();
+  const [query, setQuery] = useState("")
+  const navigate = useNavigate()
 
-  let [searchParams, setSearchParams] = useSearchParams()
+  const filteredBooks = books.filter((book) =>
+    book.name.includes(query.trim())
+  )
 
   return (
     <>
@@ -52,25 +57,56 @@ const Navbar = () => {
 
           {/* جست‌وجو و سبد خرید */}
           <div className="d-flex align-items-center gap-4">
-            <div className="input-group" style={{ width: "260px" }}>
-              <input
-                type="text"
-                className="form-control rounded-start"
-                placeholder="جستجو در کتاب‌ها..."
-                value={searchParams.get("text") || ""}
-                onChange={(event) => {
-                  let filter = event.target.value
-                  if (filter) {
-                    setSearchParams({ text: filter })
-                  } else {
-                    setSearchParams({})
-                  }
-                }
-                }
-              />
 
-              <span className="input-group-text bg-white">🔍</span>
+            <div className="position-relative" style={{ width: "260px" }}>
+              <form
+                className="input-group"
+                onSubmit={(e) => {
+                  e.preventDefault();
+
+                  if (query.trim()) {
+                    navigate(`/books?text=${encodeURIComponent(query.trim())}`);
+                  } else {
+                    navigate("/books");
+                  }
+                }}
+              >
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="جستجو در کتاب‌ها..."
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+
+                <button type="submit" className="input-group-text bg-white">
+                  🔍
+                </button>
+              </form>
+
+              {query.trim() !== "" && (
+                <div
+                  className="position-absolute bg-white shadow rounded w-100"
+                  style={{ top: "100%", left: 0, zIndex: 1000 }}
+                >
+                  {filteredBooks.length > 0 ? (
+                    filteredBooks.map((book) => (
+                      <Link
+                        key={book.id}
+                        to={`/books/${book.id}`}
+                        className="d-block p-2 text-decoration-none text-dark"
+                        onClick={() => setQuery("")}
+                      >
+                        {book.name}
+                      </Link>
+                    ))
+                  ) : (
+                    <div className="p-2 text-muted">کتابی پیدا نشد.</div>
+                  )}
+                </div>
+              )}
             </div>
+
 
             <Link
               to="/cart"

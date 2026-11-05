@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "name": "zahra",
+      "mobile": "09203654782",
+      "email": "z@gmail.com",
+      "password": "123456778z",
+      "id": "xQIOOUP_hnY"
+    },
+    {
+      "name": "baran",
+      "mobile": "09563214782",
+      "email": "b@gmail.com",
+      "password": "b123456789",
+      "id": "2JSBsjMWbYA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

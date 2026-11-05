@@ -1,29 +1,34 @@
-{
+
+  {
   "navbar": {
+    "brand": "کتاب‌فروشی",
     "home": "خانه",
-    "about": "درباره ما",
     "books": "کتاب‌ها",
+    "about": "درباره ما",
     "contact": "تماس با ما",
     "cart": "سبد خرید",
     "register": "ثبت‌نام",
     "login": "ورود",
+    "logout": "خروج",
     "searchPlaceholder": "جستجو در کتاب‌ها...",
     "searchButton": "جستجو",
     "noBooksFound": "کتابی پیدا نشد."
   },
+
   "home": {
-    "welcome": "به کتاب‌فروشی ما خوش آمدید",
-    "subtitle": "کتاب مورد علاقه‌تان را پیدا کنید.",
-    "browseBooks": "مشاهده کتاب‌ها",
-    "featuredBooks": "کتاب‌های منتخب",
-    "whyUs": "چرا ما را انتخاب کنید؟",
-    "quality": "کتاب‌های باکیفیت",
-    "qualityDescription": "کتاب‌هایی از ژانرها و نویسندگان مختلف پیدا کنید.",
-    "easyShopping": "خرید آسان",
-    "easyShoppingDescription": "کتاب‌های مورد علاقه‌تان را به‌راحتی پیدا و خریداری کنید.",
-    "fastDelivery": "ارسال سریع",
-    "fastDeliveryDescription": "کتاب‌های مورد علاقه‌تان را در محل خود تحویل بگیرید."
-  },
+  "welcome": "به کتاب‌فروشی ما خوش آمدید",
+  "subtitle": "کتاب مورد علاقه‌تان را پیدا کنید.",
+  "description": "مجموعه‌ای از کتاب‌های آموزشی و تخصصی برای یادگیری و پیشرفت شما.",
+  "browseBooks": "مشاهده کتاب‌ها",
+  "featuredBooks": "کتاب‌های منتخب",
+  "whyUs": "چرا ما را انتخاب کنید؟",
+  "quality": "قیمت مناسب",
+  "qualityDescription": "انتخاب کتاب با قیمت شفاف و مناسب.",
+  "easyShopping": "تنوع کتاب",
+  "easyShoppingDescription": "کتاب‌های متنوع برای علاقه‌مندان به یادگیری.",
+  "fastDelivery": "ارسال سریع",
+  "fastDeliveryDescription": "کتاب‌ها را آسان و سریع سفارش دهید."
+},
   "books": {
     "title": "کتاب‌های ما",
     "description": "مجموعه کتاب‌های ما را بررسی کنید.",

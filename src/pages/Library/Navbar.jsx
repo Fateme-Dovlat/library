@@ -1,13 +1,36 @@
-import { useState } from "react";
-import { Link, Outlet, NavLink, Navigate, useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { Link, Outlet, NavLink, useNavigate } from "react-router-dom"
 import { getbooks } from "../../data/data";
 import { useTranslation } from "react-i18next";
+import { FaRegUser } from "react-icons/fa";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const books = getbooks();
   const [query, setQuery] = useState("")
   const navigate = useNavigate()
+
+  const [user, setUser] = useState(() => {
+    return JSON.parse(localStorage.getItem("user"));
+  });
+
+  useEffect(() => {
+    const updateUser = () => {
+      setUser(JSON.parse(localStorage.getItem("user")));
+    };
+
+    window.addEventListener("userLogin", updateUser);
+
+    return () => {
+      window.removeEventListener("userLogin", updateUser);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/home");
+  };
 
   const filteredBooks = books.filter((book) =>
     book.name.startsWith(query.trim())
@@ -26,7 +49,7 @@ const Navbar = () => {
             className="navbar-brand fw-bold d-flex align-items-center gap-2 text-dark mb-0"
           >
             <span className="fs-3 text-primary">📖</span>
-            <span>کتاب‌فروشی</span>
+            <span>{t("navbar.brand")}</span>
           </Link>
 
           {/* لینک‌های منو */}
@@ -44,7 +67,7 @@ const Navbar = () => {
                 `nav-link ${isActive ? "text-primary fw-bold" : "text-dark"}`
               }
             >
-             {t("navbar.books")}
+              {t("navbar.books")}
             </NavLink>
 
             <NavLink
@@ -53,7 +76,7 @@ const Navbar = () => {
                 `nav-link ${isActive ? "text-primary fw-bold" : "text-dark"}`
               }
             >
-             {t("navbar.about")}
+              {t("navbar.about")}
             </NavLink>
           </div>
 
@@ -87,7 +110,7 @@ const Navbar = () => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="جستجو در کتاب‌ها..."
+                  placeholder={t("navbar.searchPlaceholder")}
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                 />
@@ -114,13 +137,35 @@ const Navbar = () => {
                       </Link>
                     ))
                   ) : (
-                    <div className="p-2 text-muted">کتابی پیدا نشد.</div>
+                    <div className="p-2 text-muted"> {t("navbar.noBooksFound")}</div>
                   )}
                 </div>
               )}
             </div>
 
+            {user ? (
+              <div className="d-flex align-items-center gap-3">
+                <span className="text-primary fw-bold">
+                  <FaRegUser size={18} /> {user.name}
+                </span>
 
+                <button
+                  type="button"
+                  className="btn btn-outline-danger rounded-pill"
+                  onClick={handleLogout}
+                >
+                   {t("navbar.logout")}
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="btn btn-outline-primary rounded-pill d-flex align-items-center gap-2"
+              >
+                <FaRegUser size={18} />
+                 {t("navbar.login")}
+              </Link>
+            )}
             <Link
               to="/cart"
               className="text-dark text-decoration-none fs-4 position-relative"

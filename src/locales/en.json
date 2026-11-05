@@ -1,29 +1,34 @@
-{
+
+  {
   "navbar": {
+    "brand": "Bookstore",
     "home": "Home",
-    "about": "About Us",
     "books": "Books",
-    "contact": "Contact Us",
+    "about": "About Us",
+    "contact": "Contact",
     "cart": "Shopping Cart",
     "register": "Register",
     "login": "Login",
+    "logout": "Logout",
     "searchPlaceholder": "Search books...",
     "searchButton": "Search",
     "noBooksFound": "No books found."
   },
+
   "home": {
-    "welcome": "Welcome to Our Bookstore",
-    "subtitle": "Discover your next favorite book.",
-    "browseBooks": "Browse Books",
-    "featuredBooks": "Featured Books",
-    "whyUs": "Why Choose Us?",
-    "quality": "High-Quality Books",
-    "qualityDescription": "Discover books from various genres and authors.",
-    "easyShopping": "Easy Shopping",
-    "easyShoppingDescription": "Find and buy your favorite books with ease.",
-    "fastDelivery": "Fast Delivery",
-    "fastDeliveryDescription": "Get your favorite books delivered to your door."
-  },
+  "welcome": "Welcome to Our Bookstore",
+  "subtitle": "Discover your next favorite book.",
+  "description": "A collection of educational and specialized books for learning and personal growth.",
+  "browseBooks": "Browse Books",
+  "featuredBooks": "Featured Books",
+  "whyUs": "Why Choose Us?",
+  "quality": "Affordable Prices",
+  "qualityDescription": "Choose books with transparent and reasonable prices.",
+  "easyShopping": "Book Variety",
+  "easyShoppingDescription": "A variety of books for people who love learning.",
+  "fastDelivery": "Fast Delivery",
+  "fastDeliveryDescription": "Order your books easily and quickly."
+},
   "books": {
     "title": "Our Books",
     "description": "Explore our collection of books.",

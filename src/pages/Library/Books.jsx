@@ -1,6 +1,9 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { getbooks } from "../../data/data";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../../features/cart/cartSlice";
+
 const Books = () => {
   const books = getbooks();
 
@@ -10,6 +13,8 @@ const Books = () => {
   const filteredBooks = books.filter((book) =>
     book.name.startsWith(bookfilter.toLowerCase())
   );
+
+  const dispatch = useDispatch();
 
   return (
     <div className="container py-5" dir="rtl">
@@ -47,8 +52,25 @@ const Books = () => {
                 <p className="text-secondary small mb-2">نویسنده: {book.author}</p>
 
                 <div className="mt-auto">
-                  <div className="book-price mb-3">{book.price.toLocaleString("fa-IR")} تومان</div>
-                  <Link to={`/books/${book.id}`} className="btn btn-outline-primary w-100">مشاهده کتاب</Link>
+                  <div className="book-price mb-3">
+                    {book.price.toLocaleString("fa-IR")} تومان
+                  </div>
+
+                  <div className="d-grid gap-2">
+                    <Link
+                      to={`/books/${book.id}`}
+                      className="btn btn-outline-primary"
+                    >
+                      مشاهده کتاب
+                    </Link>
+
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => dispatch(addItem(book))}
+                    >
+                      افزودن به سبد خرید
+                    </button>
+                  </div>
                 </div>
 
               </div>

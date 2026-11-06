@@ -3,8 +3,12 @@ import './index.css'
 import "./i18n"
 
 import { StrictMode } from 'react'
-import { BrowserRouter, Routes, Route,Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { createRoot } from 'react-dom/client'
+
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import Cart from "./pages/Library/Cart";
 
 import Navbar from './pages/Library/Navbar.jsx';
 import Home from "./pages/Library/Home.jsx"
@@ -17,21 +21,26 @@ import Login from './pages/Library/Login.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Navbar />}>
-          <Route index element={<Navigate to="/home" replace />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/books' element={<Books />} />
-          <Route path='/books/:bookId' element={<Book />}/>
-          <Route path="/register" element={<Register  />} />
-          <Route path="/login" element={<Login  />} />
-        </Route>
-        <Route path="*" element={<Notfound />} />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
 
-      </Routes>
+          <Route path='/' element={<Navbar />}>
+            <Route index element={<Navigate to="/home" replace />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/books' element={<Books />} />
+            <Route path='/books/:bookId' element={<Book />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/cart" element={<Cart />} />
+          </Route>
 
-    </BrowserRouter>
-  </StrictMode>,
+          <Route path="*" element={<Notfound />} />
+
+        </Routes>
+
+      </BrowserRouter>
+    </Provider>
+  </StrictMode>
 )

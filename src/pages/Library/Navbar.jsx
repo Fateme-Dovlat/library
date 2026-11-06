@@ -3,12 +3,17 @@ import { Link, Outlet, NavLink, useNavigate } from "react-router-dom"
 import { getbooks } from "../../data/data";
 import { useTranslation } from "react-i18next";
 import { FaRegUser } from "react-icons/fa";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const books = getbooks();
   const [query, setQuery] = useState("")
   const navigate = useNavigate()
+
+  const totalQuantity = useSelector(
+    (state) => state.cart.totalQuantity
+  );
 
   const [user, setUser] = useState(() => {
     return JSON.parse(localStorage.getItem("user"));
@@ -154,7 +159,7 @@ const Navbar = () => {
                   className="btn btn-outline-danger rounded-pill"
                   onClick={handleLogout}
                 >
-                   {t("navbar.logout")}
+                  {t("navbar.logout")}
                 </button>
               </div>
             ) : (
@@ -163,7 +168,7 @@ const Navbar = () => {
                 className="btn btn-outline-primary rounded-pill d-flex align-items-center gap-2"
               >
                 <FaRegUser size={18} />
-                 {t("navbar.login")}
+                {t("navbar.login")}
               </Link>
             )}
             <Link
@@ -171,8 +176,9 @@ const Navbar = () => {
               className="text-dark text-decoration-none fs-4 position-relative"
             >
               🛒
+
               <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                0
+                {totalQuantity}
               </span>
             </Link>
           </div>

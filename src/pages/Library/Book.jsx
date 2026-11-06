@@ -2,10 +2,16 @@ import { useParams, Link } from "react-router-dom";
 import { getbook } from "../../data/data";
 import { useTranslation } from "react-i18next";
 
+import { useDispatch } from "react-redux";
+import { addItem } from "../../features/cart/cartSlice";
+
+import { store } from "../../app/store";
+
 const Book = () => {
   const { t } = useTranslation();
   const { bookId } = useParams();
   const book = getbook(bookId);
+  const dispatch = useDispatch();
 
   if (!book) {
     return (
@@ -60,8 +66,10 @@ const Book = () => {
             </div>
 
             <button
-              className="btn btn-primary btn-lg px-5"
-              onClick={() => alert("قابلیت خرید را در مرحله بعد اضافه می‌کنیم.")}
+              className="btn btn-primary"
+              onClick={() => {
+                dispatch(addItem(book));
+              }}
             >
               خرید کتاب
             </button>
